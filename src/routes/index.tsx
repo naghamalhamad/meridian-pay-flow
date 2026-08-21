@@ -48,10 +48,10 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-3">
-        <section className="gradient-hero relative overflow-hidden rounded-2xl p-6 text-primary-foreground shadow-lift lg:col-span-2">
-          <div className="flex items-start justify-between">
-            <div>
+      <div className="grid min-w-0 gap-5 lg:grid-cols-3">
+        <section className="gradient-hero relative w-full min-w-0 overflow-hidden rounded-2xl p-6 text-primary-foreground shadow-lift lg:col-span-2">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-start">
+            <div className="min-w-0">
               <p className="text-sm/6 opacity-70">Total balance</p>
               <div className="mt-1 flex items-center gap-3">
                 <span
@@ -65,14 +65,14 @@ function Dashboard() {
                 <button
                   aria-label={hidden ? "Show balance" : "Hide balance"}
                   onClick={() => setHidden((v) => !v)}
-                  className="grid size-9 place-items-center rounded-xl bg-white/10 transition-colors duration-150 hover:bg-white/20"
+                  className="grid size-9 shrink-0 place-items-center rounded-xl bg-white/10 transition-colors duration-150 hover:bg-white/20"
                 >
                   {hidden ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
                 </button>
               </div>
               <p className="mt-3 text-sm opacity-70">Business checking ·  •••• 4821</p>
             </div>
-            <span className="inline-flex items-center gap-1 rounded-full bg-success/20 px-3 py-1 text-xs font-bold text-success">
+            <span className="inline-flex shrink-0 items-center gap-1 self-start rounded-full bg-success/20 px-3 py-1 text-xs font-bold text-success">
               <TrendingUp className="size-3.5" /> +2.4% this month
             </span>
           </div>
