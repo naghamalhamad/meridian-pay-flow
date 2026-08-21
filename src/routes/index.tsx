@@ -79,7 +79,7 @@ function Dashboard() {
           <div className="pointer-events-none absolute -right-16 -top-20 size-64 rounded-full bg-white/5" />
         </section>
 
-        <section className="rounded-2xl bg-card p-5 shadow-card">
+        <section className="min-w-0 rounded-2xl bg-card p-5 shadow-card">
           <div className="flex items-center justify-between">
             <h2 className="text-sm font-bold">Your cards</h2>
             <span className="text-xs text-muted-foreground">{cards.length} active</span>
