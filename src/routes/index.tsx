@@ -8,10 +8,8 @@ import {
   MoreHorizontal,
   Plus,
   Send,
-  Snowflake,
   TrendingUp,
 } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import { balance, cards, categories, money, transactions, weekly } from "@/lib/mock-data";
 
@@ -36,7 +34,6 @@ export const Route = createFileRoute("/")({
 
 function Dashboard() {
   const [hidden, setHidden] = useState(false);
-  const [frozen, setFrozen] = useState(false);
   const max = Math.max(...weekly.map((w) => w.amount));
 
   return (
@@ -85,7 +82,7 @@ function Dashboard() {
             <span className="text-xs text-muted-foreground">{cards.length} active</span>
           </div>
           <div className="no-scrollbar -mx-1 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-1">
-            {cards.map((card, i) => (
+            {cards.map((card) => (
               <article
                 key={card.id}
                 className="w-[230px] shrink-0 snap-start rounded-2xl bg-primary p-4 text-primary-foreground transition-transform duration-200 hover:-translate-y-1"
@@ -103,14 +100,6 @@ function Dashboard() {
                   <span>{card.holder}</span>
                   <span>{card.expiry}</span>
                 </div>
-                {i === 0 && (
-                  <div className="mt-4 flex items-center justify-between rounded-xl bg-white/10 px-3 py-2">
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold">
-                      <Snowflake className="size-3.5" /> Freeze card
-                    </span>
-                    <Switch checked={frozen} onCheckedChange={setFrozen} />
-                  </div>
-                )}
               </article>
             ))}
           </div>
