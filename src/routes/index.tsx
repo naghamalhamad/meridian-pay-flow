@@ -16,13 +16,13 @@ import { balance, cards, categories, money, transactions, weekly } from "@/lib/m
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dashboard — Meridian Business Banking" },
+      { title: "Dashboard — Central Bank Business Banking" },
       {
         name: "description",
         content:
-          "See your Meridian balance, cards, weekly spending and recent transactions in one clean dashboard.",
+          "See your Central Bank balance, cards, weekly spending and recent transactions in one clean dashboard.",
       },
-      { property: "og:title", content: "Dashboard — Meridian Business Banking" },
+      { property: "og:title", content: "Dashboard — Central Bank Business Banking" },
       {
         property: "og:description",
         content: "Balance, cards, spending insights and recent activity at a glance.",

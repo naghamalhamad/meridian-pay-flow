@@ -78,16 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Meridian — Modern Business Banking" },
+      { title: "Central Bank — Modern Business Banking" },
       {
         name: "description",
         content:
-          "Meridian is a modern business banking dashboard for balances, cards and instant transfers.",
+          "Central Bank is a modern business banking dashboard for balances, cards and instant transfers.",
       },
-      { property: "og:title", content: "Meridian — Modern Business Banking" },
+      { property: "og:title", content: "Central Bank — Modern Business Banking" },
       {
         property: "og:description",
-        content: "Track balances, manage cards and send money instantly with Meridian.",
+        content: "Track balances, manage cards and send money instantly with Central Bank.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
