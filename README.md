@@ -1,4 +1,4 @@
-# Central Bank Finance Hub
+# Union Bank Finance Hub
 
 Build a modern fintech/banking web app called "Meridian" with 2 pages: a Home Dashboard and a Send Money (Transfer) flow. Light, minimal, clean-corporate aesthetic — think a mix of a premium neobank and enterprise fintech (Mercury, Ramp, Revolut business).
 

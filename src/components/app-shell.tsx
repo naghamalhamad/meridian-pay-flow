@@ -33,16 +33,11 @@ function Logo() {
     <div className="flex items-center gap-2.5">
       <div className="grid size-9 place-items-center rounded-xl bg-primary text-primary-foreground">
         <svg viewBox="0 0 24 24" className="size-[18px]" fill="none" aria-hidden="true">
-          <path
-            d="M12 3.2 20 8H4l8-4.8ZM4 10h16M5.5 10v7.5M10 10v7.5M14 10v7.5M18.5 10v7.5M3 20.5h18"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <circle cx="9" cy="12" r="6.2" stroke="currentColor" strokeWidth="1.6" />
+          <circle cx="15" cy="12" r="6.2" stroke="currentColor" strokeWidth="1.6" />
         </svg>
       </div>
-      <span className="text-[17px] font-extrabold tracking-tight">Central Bank</span>
+      <span className="text-[17px] font-extrabold tracking-tight">Union Bank</span>
     </div>
   );
 }
@@ -84,7 +79,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           })}
         </nav>
         <div className="mt-auto rounded-2xl bg-secondary p-4">
-          <p className="text-sm font-bold">Central Bank Business</p>
+          <p className="text-sm font-bold">Union Bank Business</p>
           <p className="mt-1 text-xs text-muted-foreground">
             Your plan renews on Apr 1. Unlimited instant transfers included.
           </p>
