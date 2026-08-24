@@ -107,7 +107,7 @@ export type Person = { id: string; name: string; bank: string; initials: string 
 export const recentRecipients: Person[] = [
   { id: "p1", name: "Maya Chen", bank: "Chase •••• 2210", initials: "MC" },
   { id: "p2", name: "Daniel Ortiz", bank: "Wells Fargo •••• 8873", initials: "DO" },
-  { id: "p3", name: "Priya Raman", bank: "Union Bank •••• 1145", initials: "PR" },
+  { id: "p3", name: "Priya Raman", bank: "Central Bank •••• 1145", initials: "PR" },
   { id: "p4", name: "Tom Whitaker", bank: "Citi •••• 6402", initials: "TW" },
   { id: "p5", name: "Sofia Lindqvist", bank: "Revolut •••• 3391", initials: "SL" },
   { id: "p6", name: "Jamal Baptiste", bank: "Amex •••• 7728", initials: "JB" },
@@ -117,7 +117,7 @@ export const allRecipients: Person[] = [
   ...recentRecipients,
   { id: "p7", name: "Northwind Studio LLC", bank: "Mercury •••• 0092", initials: "NS" },
   { id: "p8", name: "Elena Vasquez", bank: "BofA •••• 4417", initials: "EV" },
-  { id: "p9", name: "Kai Nakamura", bank: "Union Bank •••• 8830", initials: "KN" },
+  { id: "p9", name: "Kai Nakamura", bank: "Central Bank •••• 8830", initials: "KN" },
   { id: "p10", name: "Harper Studios", bank: "Chase •••• 5561", initials: "HS" },
 ];
 

@@ -7,13 +7,13 @@ import { allRecipients, balance, money, recentRecipients, type Person } from "@/
 export const Route = createFileRoute("/transfer")({
   head: () => ({
     meta: [
-      { title: "Send Money — Union Bank" },
+      { title: "Send Money — Central Bank" },
       {
         name: "description",
         content:
-          "Send money instantly to saved recipients with Union Bank: pick a person, set an amount, confirm.",
+          "Send money instantly to saved recipients with Central Bank: pick a person, set an amount, confirm.",
       },
-      { property: "og:title", content: "Send Money — Union Bank" },
+      { property: "og:title", content: "Send Money — Central Bank" },
       {
         property: "og:description",
         content: "A three-step transfer flow: recipient, amount, review and confirm.",
@@ -84,7 +84,7 @@ function TransferPage() {
       <div>
         <h1 className="text-2xl font-extrabold sm:text-3xl">Send money</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Transfers between Union Bank accounts arrive instantly.
+          Transfers between Central Bank accounts arrive instantly.
         </p>
       </div>
 
@@ -304,7 +304,7 @@ function TransferPage() {
                 <dt className="text-muted-foreground">Estimated arrival</dt>
                 <dd className="inline-flex items-center gap-1.5 font-semibold">
                   <Zap className="size-4 text-warning" />
-                  {person.bank.startsWith("Union Bank") ? "Instant" : "1–2 business days"}
+                  {person.bank.startsWith("Central Bank") ? "Instant" : "1–2 business days"}
                 </dd>
               </div>
               <div className="flex items-center justify-between py-4">
