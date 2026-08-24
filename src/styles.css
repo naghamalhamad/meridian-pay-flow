@@ -78,7 +78,12 @@
   --chart-3: oklch(0.769 0.163 70);
   --chart-4: oklch(0.637 0.208 25.3);
   --chart-5: oklch(0.62 0.11 220);
-  --gradient-hero: linear-gradient(135deg, oklch(0.26 0.055 266) 0%, oklch(0.19 0.04 266) 55%, oklch(0.28 0.09 277) 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.26 0.055 266) 0%,
+    oklch(0.19 0.04 266) 55%,
+    oklch(0.28 0.09 277) 100%
+  );
 }
 
 @layer base {

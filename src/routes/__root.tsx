@@ -81,7 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Meridian — Modern Business Banking" },
       {
         name: "description",
-        content: "Meridian is a modern business banking dashboard for balances, cards and instant transfers.",
+        content:
+          "Meridian is a modern business banking dashboard for balances, cards and instant transfers.",
       },
       { property: "og:title", content: "Meridian — Modern Business Banking" },
       {

@@ -10,7 +10,8 @@ export const Route = createFileRoute("/transfer")({
       { title: "Send Money — Meridian" },
       {
         name: "description",
-        content: "Send money instantly to saved recipients with Meridian: pick a person, set an amount, confirm.",
+        content:
+          "Send money instantly to saved recipients with Meridian: pick a person, set an amount, confirm.",
       },
       { property: "og:title", content: "Send Money — Meridian" },
       {
@@ -164,7 +165,9 @@ function TransferPage() {
                 </li>
               ))}
               {list.length === 0 && (
-                <li className="py-6 text-center text-sm text-muted-foreground">No recipients found.</li>
+                <li className="py-6 text-center text-sm text-muted-foreground">
+                  No recipients found.
+                </li>
               )}
             </ul>
           </section>
@@ -304,7 +307,10 @@ function TransferPage() {
       )}
 
       {step === 3 && person && (
-        <section key="s3" className="animate-fade-up rounded-2xl bg-card px-6 py-14 text-center shadow-card">
+        <section
+          key="s3"
+          className="animate-fade-up rounded-2xl bg-card px-6 py-14 text-center shadow-card"
+        >
           <span className="animate-pop mx-auto grid size-20 place-items-center rounded-full bg-success-soft">
             <Check className="size-9 text-success" strokeWidth={3} />
           </span>

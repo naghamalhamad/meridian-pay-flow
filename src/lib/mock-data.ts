@@ -8,12 +8,54 @@ export type Txn = {
 };
 
 export const transactions: Txn[] = [
-  { id: "t1", merchant: "Whole Foods Market", category: "Groceries", amount: -128.42, when: "Today", initials: "WF" },
-  { id: "t2", merchant: "Stripe Payout", category: "Income", amount: 3250.0, when: "Today", initials: "ST" },
-  { id: "t3", merchant: "Uber", category: "Transport", amount: -24.8, when: "Yesterday", initials: "UB" },
-  { id: "t4", merchant: "Figma", category: "Subscriptions", amount: -45.0, when: "Yesterday", initials: "FG" },
-  { id: "t5", merchant: "Blue Bottle Coffee", category: "Dining", amount: -8.75, when: "Mar 12", initials: "BB" },
-  { id: "t6", merchant: "Delta Air Lines", category: "Travel", amount: -412.3, when: "Mar 11", initials: "DL" },
+  {
+    id: "t1",
+    merchant: "Whole Foods Market",
+    category: "Groceries",
+    amount: -128.42,
+    when: "Today",
+    initials: "WF",
+  },
+  {
+    id: "t2",
+    merchant: "Stripe Payout",
+    category: "Income",
+    amount: 3250.0,
+    when: "Today",
+    initials: "ST",
+  },
+  {
+    id: "t3",
+    merchant: "Uber",
+    category: "Transport",
+    amount: -24.8,
+    when: "Yesterday",
+    initials: "UB",
+  },
+  {
+    id: "t4",
+    merchant: "Figma",
+    category: "Subscriptions",
+    amount: -45.0,
+    when: "Yesterday",
+    initials: "FG",
+  },
+  {
+    id: "t5",
+    merchant: "Blue Bottle Coffee",
+    category: "Dining",
+    amount: -8.75,
+    when: "Mar 12",
+    initials: "BB",
+  },
+  {
+    id: "t6",
+    merchant: "Delta Air Lines",
+    category: "Travel",
+    amount: -412.3,
+    when: "Mar 11",
+    initials: "DL",
+  },
 ];
 
 export const weekly = [
@@ -34,9 +76,30 @@ export const categories = [
 ];
 
 export const cards = [
-  { id: "c1", label: "Business Debit", last4: "4821", holder: "Alex Moreau", expiry: "08/29", network: "VISA" },
-  { id: "c2", label: "Virtual · Subscriptions", last4: "9034", holder: "Alex Moreau", expiry: "01/28", network: "MC" },
-  { id: "c3", label: "Travel Card", last4: "5517", holder: "Alex Moreau", expiry: "11/27", network: "AMEX" },
+  {
+    id: "c1",
+    label: "Business Debit",
+    last4: "4821",
+    holder: "Alex Moreau",
+    expiry: "08/29",
+    network: "VISA",
+  },
+  {
+    id: "c2",
+    label: "Virtual · Subscriptions",
+    last4: "9034",
+    holder: "Alex Moreau",
+    expiry: "01/28",
+    network: "MC",
+  },
+  {
+    id: "c3",
+    label: "Travel Card",
+    last4: "5517",
+    holder: "Alex Moreau",
+    expiry: "11/27",
+    network: "AMEX",
+  },
 ];
 
 export type Person = { id: string; name: string; bank: string; initials: string };

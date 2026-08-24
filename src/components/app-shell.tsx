@@ -56,7 +56,8 @@ export function AppShell({ children }: { children: ReactNode }) {
               active
                 ? "bg-accent-soft text-accent"
                 : "text-muted-foreground hover:bg-secondary hover:text-foreground",
-              !item.enabled && "cursor-default opacity-60 hover:bg-transparent hover:text-muted-foreground",
+              !item.enabled &&
+                "cursor-default opacity-60 hover:bg-transparent hover:text-muted-foreground",
             );
             if (!item.enabled) {
               return (

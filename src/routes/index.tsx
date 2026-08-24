@@ -41,7 +41,9 @@ function Dashboard() {
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div>
           <h1 className="text-2xl font-extrabold sm:text-3xl">Good morning, Alex</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Thursday, March 13 · Everything looks healthy</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Thursday, March 13 · Everything looks healthy
+          </p>
         </div>
       </div>
 
@@ -67,7 +69,7 @@ function Dashboard() {
                   {hidden ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
                 </button>
               </div>
-              <p className="mt-3 text-sm opacity-70">Business checking ·  •••• 4821</p>
+              <p className="mt-3 text-sm opacity-70">Business checking · •••• 4821</p>
             </div>
             <span className="inline-flex shrink-0 items-center gap-1 self-start rounded-full bg-success/20 px-3 py-1 text-xs font-bold text-success">
               <TrendingUp className="size-3.5" /> +2.4% this month
@@ -95,7 +97,9 @@ function Dashboard() {
                     {card.network}
                   </span>
                 </div>
-                <p className="mt-6 font-mono text-sm tracking-[0.18em]">•••• •••• •••• {card.last4}</p>
+                <p className="mt-6 font-mono text-sm tracking-[0.18em]">
+                  •••• •••• •••• {card.last4}
+                </p>
                 <div className="mt-4 flex items-end justify-between text-[11px] opacity-80">
                   <span>{card.holder}</span>
                   <span>{card.expiry}</span>
@@ -139,7 +143,9 @@ function Dashboard() {
             <h2 className="text-sm font-bold">Spending overview</h2>
             <span className="text-xs text-muted-foreground">Last 7 days</span>
           </div>
-          <p className="mt-3 text-2xl font-extrabold">{money(weekly.reduce((a, b) => a + b.amount, 0))}</p>
+          <p className="mt-3 text-2xl font-extrabold">
+            {money(weekly.reduce((a, b) => a + b.amount, 0))}
+          </p>
           <div className="mt-5 flex h-32 items-end gap-2">
             {weekly.map((w) => (
               <div key={w.day} className="group flex flex-1 flex-col items-center gap-2">
@@ -201,7 +207,10 @@ function Dashboard() {
                   <p className="text-xs text-muted-foreground">{t.when}</p>
                 </div>
                 <ArrowUpRight
-                  className={cn("size-4 shrink-0 text-muted-foreground", t.amount > 0 && "rotate-90")}
+                  className={cn(
+                    "size-4 shrink-0 text-muted-foreground",
+                    t.amount > 0 && "rotate-90",
+                  )}
                 />
               </li>
             ))}
