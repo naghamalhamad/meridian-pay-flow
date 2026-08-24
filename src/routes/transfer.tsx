@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { ArrowLeft, Check, Search, Zap } from "lucide-react";
+import { ArrowLeft, Check, Delete, Search, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { allRecipients, balance, money, recentRecipients, type Person } from "@/lib/mock-data";
 
@@ -67,6 +67,16 @@ function TransferPage() {
   const select = (p: Person) => {
     setPerson(p);
     setStep(1);
+  };
+
+  const tapKey = (key: string) => {
+    setAmount((prev) => {
+      if (key === "back") return prev.slice(0, -1);
+      if (key === ".") return prev.includes(".") ? prev : prev === "" ? "0." : prev + ".";
+      const decimals = prev.split(".")[1];
+      if (decimals !== undefined && decimals.length >= 2) return prev;
+      return prev === "0" ? key : prev + key;
+    });
   };
 
   return (
@@ -176,14 +186,17 @@ function TransferPage() {
 
       {step === 1 && person && (
         <div key="s1" className="animate-fade-up space-y-5">
-          <section className="rounded-2xl bg-card p-8 shadow-card">
-            <div className="flex flex-col items-center gap-2">
-              <Avatar initials={person.initials} size="lg" />
-              <p className="text-sm font-semibold">Sending to {person.name}</p>
-              <p className="text-xs text-muted-foreground">{person.bank}</p>
+          <section className="rounded-2xl bg-card p-6 shadow-card">
+            <div className="flex items-center gap-3 border-b border-border pb-4">
+              <Avatar initials={person.initials} />
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-semibold">{person.name}</p>
+                <p className="text-xs text-muted-foreground">{person.bank}</p>
+              </div>
+              <p className="shrink-0 text-xs text-muted-foreground">{money(balance)} available</p>
             </div>
 
-            <div className="mt-8 flex items-center justify-center gap-1">
+            <div className="mt-6 flex items-center justify-center gap-1">
               <span className={cn("font-extrabold text-muted-foreground", fontSize)}>$</span>
               <input
                 autoFocus
@@ -192,34 +205,45 @@ function TransferPage() {
                 onChange={(e) => setAmount(e.target.value.replace(/[^0-9.]/g, ""))}
                 placeholder="0"
                 className={cn(
-                  "w-full max-w-[320px] bg-transparent text-center font-extrabold tracking-tight outline-none transition-all duration-150 placeholder:text-muted-foreground/40",
+                  "w-full max-w-[260px] bg-transparent text-center font-extrabold tracking-tight outline-none transition-all duration-150 placeholder:text-muted-foreground/40",
                   fontSize,
                 )}
               />
             </div>
-            <p className="mt-3 text-center text-xs text-muted-foreground">
-              {money(balance)} available
-            </p>
 
-            <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
               {[50, 100, 250].map((v) => (
                 <button
                   key={v}
                   onClick={() => setAmount(String(v))}
-                  className="rounded-xl bg-secondary px-4 py-2 text-sm font-semibold transition-colors duration-150 hover:bg-accent-soft hover:text-accent"
+                  className="rounded-full bg-secondary px-3.5 py-1.5 text-xs font-semibold transition-colors duration-150 hover:bg-accent-soft hover:text-accent"
                 >
                   ${v}
                 </button>
               ))}
               <button
                 onClick={() => setAmount(balance.toFixed(2))}
-                className="rounded-xl bg-secondary px-4 py-2 text-sm font-semibold transition-colors duration-150 hover:bg-accent-soft hover:text-accent"
+                className="rounded-full bg-secondary px-3.5 py-1.5 text-xs font-semibold transition-colors duration-150 hover:bg-accent-soft hover:text-accent"
               >
                 Max
               </button>
             </div>
 
-            <div className="mt-7">
+            <div className="mx-auto mt-6 grid max-w-[280px] grid-cols-3 gap-1.5">
+              {["1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "0", "back"].map((k) => (
+                <button
+                  key={k}
+                  type="button"
+                  onClick={() => tapKey(k)}
+                  aria-label={k === "back" ? "Delete last digit" : `Enter ${k}`}
+                  className="flex h-12 items-center justify-center rounded-xl text-lg font-semibold text-foreground transition-colors duration-100 hover:bg-secondary active:scale-95 active:bg-accent-soft active:text-accent"
+                >
+                  {k === "back" ? <Delete className="size-[18px]" /> : k}
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-6">
               <label htmlFor="note" className="text-xs font-semibold text-muted-foreground">
                 Note (optional)
               </label>
